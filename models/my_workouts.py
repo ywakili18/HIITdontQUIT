@@ -51,3 +51,11 @@ class My_Workout(db.Model):
     def delete(cls, self):
         db.session.delete(self)
         db.session.commit()
+
+    @classmethod
+    def find_by_user(cls, user_id):
+        return My_Workout.query.filter_by(user_id=user_id)
+
+    @classmethod
+    def find_by_workout(cls, workout_id):
+        return My_Workout.query.filter_by(workout_id=workout_id)
