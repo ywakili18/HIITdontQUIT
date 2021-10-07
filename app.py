@@ -4,7 +4,7 @@ from flask_cors import CORS
 from flask_migrate import Migrate
 from models.db import db
 from models import user, workout_names
-from resources import workout_names
+# from resources import workout_names
 
 app = Flask(__name__)
 CORS(app)
@@ -22,3 +22,5 @@ migrate = Migrate(app, db)
 # api.add_resource(post.Posts, '/posts')
 # api.add_resource(post.PostDetail, '/posts/<int:post_id>')
 # api.add_resource(comment.Comments, '/comments')
+if __name__ == '__main__':
+    app.run()
