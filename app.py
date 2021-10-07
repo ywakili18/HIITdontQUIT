@@ -3,16 +3,15 @@ from flask_restful import Api
 from flask_cors import CORS
 from flask_migrate import Migrate
 from models.db import db
-from flask_mobility import Mobility
-from models import user, post, comment
-from resources import user, post, comment
+from models import user, workout_names
+from resources import workout_names
 
 app = Flask(__name__)
 CORS(app)
 api = Api(app)
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://localhost:5432/hiit_workout"
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://localhost:5432/hiit"
 app.config['SQLALCHEMY_ECHO'] = True
 
 db.init_app(app)

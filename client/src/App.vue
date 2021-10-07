@@ -36,6 +36,16 @@ header nav a {
 main {
   padding: 2em 0;
 }
+body {
+  margin: 0;
+  padding: 0;
+  color: #eee;
+  background-color: #4b87c0;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+}
 </style>
 
 
