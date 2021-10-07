@@ -21,17 +21,7 @@ export default {
 </script>
 
 <style>
-header {
-  background-color: #212121;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: 3em;
-  
-}
-header nav a {
-  margin: 0 1em;
-}
+/*  */
 
 main {
   padding: 2em 0;
@@ -40,11 +30,13 @@ body {
   margin: 0;
   padding: 0;
   color: #eee;
-  background-color: #4b87c0;
+  background: rgb(2,0,36) !important;
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 63%) !important;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  text-align: center !important;
+  
 }
 </style>
 
