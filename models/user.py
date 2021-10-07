@@ -29,6 +29,9 @@ class User(db.Model):
         self.goal_weight = goal_weight
         self.height_in_inches = height_in_inches
 
+        users = db.relationship(
+            'User', cascade="all", backref=db.backref('users', lazy=True))
+
     def json(self):
         return {"id": self.id,
                 "email": self.email,

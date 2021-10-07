@@ -3,7 +3,7 @@ from flask_restful import Api
 from flask_cors import CORS
 from flask_migrate import Migrate
 from models.db import db
-from models import user, workout_names
+from models import user, workout_names, my_workouts
 # from resources import workout_names
 
 app = Flask(__name__)
