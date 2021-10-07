@@ -1,34 +1,28 @@
 from datetime import datetime
-
-from sqlalchemy.orm import backref
 from models.db import db
 
 
-class Workout_Name(db.Model):
-    __tablename__ = 'workout_name'
+class Category(db.Model):
+    __tablename__ = 'categories'
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(80), unique=True, nullable=False)
+    name = db.Column(db.String(255), nullable=False)
     type = db.Column(db.String(255), nullable=False)
     created_at = db.Column(db.DateTime, nullable=False,
                            default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow(
     ), nullable=False, onupdate=datetime.utcnow)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
-    workout_names = db.relationship(
-        'My_Workout', cascade="all", backref=db.backref('my_workouts', lazy=True))
+    user = db.relationship('User', backref=db.backref('users', lazy=True))
 
-    def __init__(self, name, type):
+    def __init__(self, name, type, user_id):
         self.name = name
         self.type = type
+        self.user_id = user_id
 
     def json(self):
-        return {"id": self.id,
-                "name": self.name,
-                "type": self.type,
-                "created_at": str(self.created_at),
-                "updated_at": str(self.updated_at)
-                }
+        return {"id": self.id, "name": self.name, "type": self.type, "user_id": self.user_id, "created_at": str(self.created_at), "updated_at": str(self.updated_at)}
 
     def create(self):
         db.session.add(self)
@@ -37,11 +31,12 @@ class Workout_Name(db.Model):
 
     @classmethod
     def find_all(cls):
-        return Workout_Name.query.all()
+        categories = Category.query.all()
+        return [c.json() for c in categories]
 
     @classmethod
     def find_by_id(cls, id):
-        return Workout_Name.query.filter_by(id=id).first()
+        return Category.query.filter_by(id=id).first()
 
     @classmethod
     def delete(cls, self):

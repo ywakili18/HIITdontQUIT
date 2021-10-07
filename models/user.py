@@ -6,44 +6,26 @@ class User(db.Model):
     __tablename__ = 'users'
 
     id = db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(80), unique=True, nullable=False)
-    password = db.Column(db.String(255), nullable=False)
-    first_name = db.Column(db.String(80), nullable=False)
-    last_name = db.Column(db.String(80), nullable=False)
-    age = db.Column(db.Integer, nullable=False)
-    weight_now = db.Column(db.Integer, nullable=False)
-    goal_weight = db.Column(db.Integer, nullable=False)
-    height_in_inches = db.Column(db.Integer, nullable=False)
-    created_at = db.Column(db.DateTime, nullable=False,
-                           default=datetime.utcnow)
+    name = db.Column(db.String(255), nullable=False)
+    username = db.Column(db.String(255), nullable=False, unique=True)
+    email = db.Column(db.String(255), nullable=False, unique=True)
+    created_at = db.Column(db.DateTime, default=str(
+        datetime.utcnow()), nullable=False)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow(
-    ), nullable=False, onupdate=datetime.utcnow)
+    ), nullable=False, onupdate=datetime.now())
 
-    def __init__(self, email, password, first_name, last_name, age, weight_now, goal_weight, height_in_inches):
+    # categories = db.relationship("Post", cascade='all',
+    #                         backref=db.backref('posts', lazy=True))
+    # workouts = db.relationship("Comment", cascade='all',
+    #                            backref=db.backref('comment_users', lazy=True))
+
+    def __init__(self, name, username, email):
+        self.name = name
+        self.username = username
         self.email = email
-        self.password = password
-        self.first_name = first_name
-        self.last_name = last_name
-        self.age = age
-        self.weight_now = weight_now
-        self.goal_weight = goal_weight
-        self.height_in_inches = height_in_inches
-
-        users = db.relationship(
-            'User', cascade="all", backref=db.backref('users', lazy=True))
 
     def json(self):
-        return {"id": self.id,
-                "email": self.email,
-                "password": self.password,
-                "first_name": self.first_name,
-                "last_name": self.last_name,
-                "age": self.age,
-                "weight_now": self.weight_now,
-                "goal_weight": self.goal_weight,
-                "height_in_inches": self.height_in_inches,
-                "created_at": str(self.created_at),
-                "updated_at": str(self.updated_at)}
+        return {"id": self.id, "name": self.name, "username": self.username, "email": self.email, "created_at": str(self.created_at), "updated_at": str(self.updated_at)}
 
     def create(self):
         db.session.add(self)
@@ -55,10 +37,6 @@ class User(db.Model):
         return User.query.all()
 
     @classmethod
-    def find_by_id(cls, id):
-        return User.query.filter_by(id=id).first()
-
-    @classmethod
-    def delete(cls, self):
-        db.session.delete(self)
-        db.session.commit()
+    def find_by_id(cls, user_id):
+        user = User.query.filter_by(id=user_id).first()
+        return user
