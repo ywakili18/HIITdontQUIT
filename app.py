@@ -3,6 +3,7 @@ from flask_restful import Api
 from flask_cors import CORS
 from flask_migrate import Migrate
 from models.db import db
+from flask_mobility import Mobility
 from models import user, post, comment
 from resources import user, post, comment
 
