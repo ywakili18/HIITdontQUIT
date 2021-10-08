@@ -13,17 +13,21 @@ class Workout(db.Model):
     updated_at = db.Column(db.DateTime, default=datetime.utcnow(
     ), nullable=False, onupdate=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    category_id = db.Column(db.Integer, db.ForeignKey(
+        'categories.id'), nullable=False)
 
     user = db.relationship(
         'User', backref=db.backref('comment_users', lazy=True))
+    category = db.relationship(
+        'User', backref=db.backref('comment_categories', lazy=True))
 
-    def __init__(self, duration, user_id, name):
+    def __init__(self, duration, user_id, category_id):
         self.duration = duration
         self.user_id = user_id
-        self.name = name
+        self.category_id = category_id
 
     def json(self):
-        return {"id": self.id, "duration": self.duration, "name": self.name, "user_id": self.user_id, "created_at": str(self.created_at), "updated_at": str(self.updated_at)}
+        return {"id": self.id, "duration": self.duration, "user_id": self.user_id, "category_id": self.category_id, "created_at": str(self.created_at), "updated_at": str(self.updated_at)}
 
     def create(self):
         db.session.add(self)
