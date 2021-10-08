@@ -1,20 +1,30 @@
 <template>
 <div>
-  <b-card
-    title=""
-    img-src="https://picsum.photos/600/300/?image=25"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2"
-  >
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
+  <b-card-group>
+    <b-card title="Yousof Wakili" img-src="https://www.cartoonify.de/wp-content/plugins/svg-avatars-generator/data/temp-avatars/svgA45360691249444063.png" img-alt="Image" img-top>
+        <a href="https://github.com/ywakili18">Github
+        </a>
+      <template #footer>
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </template>
+    </b-card>
 
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
+    <b-card title="Max Arenstein" img-src="https://placekitten.com/g/300/450" img-alt="Image" img-top>
+      <a href="https://github.com/MistermindX">Github
+        </a>
+      <template #footer>
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </template>
+    </b-card>
+
+    <b-card title="Brandon Hernandez" img-src="https://placekitten.com/g/300/450" img-alt="Image" img-top>
+        <a href="https://github.com/brandonhernandez123">Github
+        </a>
+      <template #footer>
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </template>
+    </b-card>
+  </b-card-group>
 </div>
 </template>
 
