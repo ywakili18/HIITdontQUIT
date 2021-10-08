@@ -4,9 +4,6 @@
     <h2>Welcome to HIITDONTQUIT!</h2>
     <input type="text" placeholder="First Name" required>
     <input type="text" placeholder="Last Name" required>
-    <input type="number" placeholder="age" required>
-    <input type="number" placeholder="Height" required>
-    <input type="number" placeholder="Current Weight" required>
     <input type="number" placeholder="Goal Weight" required>
     <input type="text" placeholder="Username" required>
     <input type="email" placeholder="Email" required>

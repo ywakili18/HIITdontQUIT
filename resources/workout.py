@@ -21,13 +21,13 @@ class Workouts(Resource):
 
 
 class WorkoutDetail(Resource):
-    def get(self):
-        workout = Workout.query.options(joinedload('user').filter_by(diw))
+    def get(self, workout_id):
+        workout = Workout.query.options(joinedload('user').filter_by(id=workout_id))
         return workout
 
     def put(self, workout_id):
         data = request.get_json()
-        workout = Workout.find_by_id(workout_id)
+        workout = Workout.find_by_id(id=workout_id)
         for key in data:
             setattr(workout, key, data[key])
         db.session.commit()
