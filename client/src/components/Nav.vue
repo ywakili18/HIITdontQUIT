@@ -22,6 +22,7 @@ export default {
 <style scoped>
 #menu {
 	background: #8F8F8F;
+	background: linear-gradient(to bottom,  #244A6B,  #7442A6);
 	color: #FFF;
 	height: 49px;
 	padding-left: 18px;
@@ -113,6 +114,7 @@ export default {
 	#menu input:checked + label:before {content:"\00d7"}
 	#menu input:checked ~ ul {display:block}
 }
+
 </style>
 
        
