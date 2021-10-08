@@ -9,7 +9,7 @@
       </template>
     </b-card>
 
-    <b-card title="Max Arenstein" img-src="https://placekitten.com/g/300/450" img-alt="Image" img-top>
+    <b-card title="Max Arenstein" img-src="https://www.cartoonify.de/wp-content/plugins/svg-avatars-generator/data/temp-avatars/svgA5685853819968507.png" img-alt="Image" img-top>
       <a href="https://github.com/MistermindX">Github
         </a>
       <template #footer>
@@ -17,7 +17,7 @@
       </template>
     </b-card>
 
-    <b-card title="Brandon Hernandez" img-src="https://placekitten.com/g/300/450" img-alt="Image" img-top>
+    <b-card title="Brandon Hernandez" img-src="https://www.cartoonify.de/wp-content/plugins/svg-avatars-generator/data/temp-avatars/svgA46025484133375905.png" img-alt="Image" img-top>
         <a href="https://github.com/brandonhernandez123">Github
         </a>
       <template #footer>
