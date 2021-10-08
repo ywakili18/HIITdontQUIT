@@ -53,7 +53,18 @@ Increase the number by one for eight rounds, one extra punch per round.
         It can be used as straight cardio as well; e.g., 3 sets of 10 minutes of continuous jumping with 2 minutes of rest in between. Or 2 sets of 15 minutes of continuous jumping. Or when you get good, 30 or more minutes of jumping non-stop.
       </b-card-text>
     </b-card>
+    <b-card img-src="https://media2.giphy.com/media/MdA16VIoXKKxNE8Stk/giphy.gif" img-alt="Card image" img-left>
+        <b-card-text>
+          <h6>A Hackathon</h6>
+          A Hackathon is easily one of the toughest workouts one can do that will leaving you feeling unfulfilled at the end of it, a 48 hour Hackathon
+          in which you are not allowed to sleep, Suffering helps drop the calories, stress doesn't relive stress but adds on to it and finally
+          merge conflicts will often remind you of the at home conflicts you can never outrun ;)
+        </b-card-text>
+      </b-card>
+    
+    
   </div>
+  
 </div>
   </section>
 </div>
