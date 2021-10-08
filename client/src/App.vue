@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style>
-/*  */
+
 
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Righteous&display=swap');
 
