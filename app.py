@@ -21,8 +21,8 @@ api.add_resource(user.Users, '/users')
 api.add_resource(user.UserDetail, '/users/<int:user_id>')
 api.add_resource(category.Categories, '/categories')
 api.add_resource(category.CategoryDetail, '/categories/<int:category_id>')
-api.add_resource(workout.Workouts, '/workouts')
-api.add_resource(workout.WorkoutDetail, '/workouts/<int:workout_id>')
+api.add_resource(workout.Workouts, '/comments')
+api.add_resource(workout.WorkoutDetail, '/comments/<int:workout_id>')
 
 if __name__ == '__main__':
     app.run(debug=True)
