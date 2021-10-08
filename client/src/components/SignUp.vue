@@ -1,52 +1,21 @@
 <template>
-    <div>
-        <h2>Welcome to HIITDONTQUIT</h2>
-        <p>We're very excited to have you join and start creating and tracking your workouts!</p>
-        <p>Please fill out the information below to get started</p>
-        <br/>
-        <br/>
-        <br/>
-        <section>
-            <form>
-                <h6>What is your first and last name?</h6>
-                
-                <input type='text' placeholder="First Name"/>
-                <br/>
-                <br/>
-                <input type='text' placeholder="Last Name"/>
-                <br/>
-                <br/>
-                <h6>Now, additional information</h6>
-                <input type='number' placeholder="Weight"/>
-                <br/>
-                <input type='number' placeholder="Height in inches"/>
-                <br/>
-                <input type='number' placeholder="Age"/>
-                <br/>
-                <br/>
-                <h6>Now Set a goal for yourself!</h6>
-                <input type="number" placeholder="Goal Weight" />
-                <br/>
-                <br/>
-                <h6>And now to make it official</h6>
-                <br/>
-                <input type="email" placeholder=" Enter Email"/>
-                <br/>
-                <br/>
-                <input type="text" placeholder="Create Username" />
-                <br/>
-                <br/>
-                <input type="password" placeholder="Create Password" />
-                <br/>
-                <br/>
-                <input type="password" placeholder="Confirm Password" />
-                <br/>
-                <br/>
-                <button>Create Account</button>
-
-            </form>
-        </section>
-    </div>
+<div class="login">
+  <div class="form">
+    <h2>Welcome to HIITDONTQUIT!</h2>
+    <input type="text" placeholder="First Name" required>
+    <input type="text" placeholder="Last Name" required>
+    <input type="number" placeholder="age" required>
+    <input type="number" placeholder="Height" required>
+    <input type="number" placeholder="Current Weight" required>
+    <input type="number" placeholder="Goal Weight" required>
+    <input type="text" placeholder="Username" required>
+    <input type="email" placeholder="Email" required>
+    <input type="password" placeholder="Password" required>
+    <input type="submit" value="Create account" required class="submit">
+  </div>
+</div>
+  
+  
    
 </template>
 
@@ -57,8 +26,59 @@ export default {
 }
 </script>
 
-
-
 <style scoped>
-
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.login {
+  width: 320px;
+  height: 750px;
+  border: 1px solid #CCC;
+  background: url(https://cdn.dribbble.com/users/406059/screenshots/5210740/dribbble2.gif) center center no-repeat;
+  background-size: cover;
+  margin: 30px auto;
+  border-radius: 20px;
+}
+.login .form {
+  width: 100%;
+  height: 100%;
+  padding: 15px 25px;
+}
+.login .form h2 {
+  color: #FFF;
+  text-align: center;
+  font-weight: normal;
+  font-size: 18px;
+  margin-top: 60px;
+  margin-bottom: 80px;
+}
+.login .form input {
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
+  background: rgba(255,255,255,.5);
+  border: 1px solid rgba(255,255,255,.1);
+  padding: 0 15px;
+  color: #FFF;
+  border-radius: 5px;
+  font-size: 14px;
+  opacity: 100%;
+}
+.login .form input:focus {
+  border: 1px solid rgba(255,255,255,.8);
+  outline: none;
+}
+::-webkit-input-placeholder {
+    color: #DDD;
+}
+.login .form input.submit {
+  background: rgba(255,255,255,.9);
+  color: #444;
+  font-size: 15px;
+  margin-top: 40px;
+  font-weight: bold;
+}
 </style>
+
+

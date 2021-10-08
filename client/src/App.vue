@@ -21,17 +21,19 @@ export default {
 </script>
 
 <style>
-/*  */
+
 
 main {
   padding: 2em 0;
 }
 body {
-  margin: 0;
-  padding: 0;
-  color: #eee;
-  background: rgb(2,0,36) !important;
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 63%) !important;
+  
+  color: #eee !important;
+  background: url(assets/boxing.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
