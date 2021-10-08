@@ -36,7 +36,13 @@
                 <input type="text" placeholder="Create Username" />
                 <br/>
                 <br/>
-                <input type="password" placeholder=" Create Password" />
+                <input type="password" placeholder="Create Password" />
+                <br/>
+                <br/>
+                <input type="password" placeholder="Confirm Password" />
+                <br/>
+                <br/>
+                <button>Create Account</button>
 
             </form>
         </section>
@@ -50,3 +56,9 @@ export default {
     name: 'SignUp'
 }
 </script>
+
+
+
+<style scoped>
+
+</style>
