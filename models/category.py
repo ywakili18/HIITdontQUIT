@@ -12,17 +12,16 @@ class Category(db.Model):
                            default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow(
     ), nullable=False, onupdate=datetime.utcnow)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
-    user = db.relationship('User', backref=db.backref('users', lazy=True))
+    workouts = db.relationship(
+        "Workout", cascade='all', backref=db.backref('comment_categories', lazy=True))
 
-    def __init__(self, name, type, user_id):
+    def __init__(self, name, type):
         self.name = name
         self.type = type
-        self.user_id = user_id
 
     def json(self):
-        return {"id": self.id, "name": self.name, "type": self.type, "user_id": self.user_id, "created_at": str(self.created_at), "updated_at": str(self.updated_at)}
+        return {"id": self.id, "name": self.name, "type": self.type, "created_at": str(self.created_at), "updated_at": str(self.updated_at)}
 
     def create(self):
         db.session.add(self)

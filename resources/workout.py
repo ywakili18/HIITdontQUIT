@@ -21,9 +21,10 @@ class Workouts(Resource):
 
 
 class WorkoutDetail(Resource):
-    def get(self):
-        workout = Workout.query.options(joinedload('user').filter_by(diw))
-        return workout
+    def get(self, workout_id):
+        workout = Workout.query.options(
+            joinedload('user', 'category')).filter_by(id=workout_id).first()
+        return workout.json()
 
     def put(self, workout_id):
         data = request.get_json()

@@ -14,10 +14,8 @@ class User(db.Model):
     updated_at = db.Column(db.DateTime, default=datetime.utcnow(
     ), nullable=False, onupdate=datetime.now())
 
-    # categories = db.relationship("Post", cascade='all',
-    #                         backref=db.backref('posts', lazy=True))
-    # workouts = db.relationship("Comment", cascade='all',
-    #                            backref=db.backref('comment_users', lazy=True))
+    workouts = db.relationship(
+        "Workout", cascade='all', backref=db.backref('comment_users', lazy=True))
 
     def __init__(self, name, username, email):
         self.name = name

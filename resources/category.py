@@ -1,6 +1,5 @@
 from models.db import db
 from models.category import Category
-from models.user import User
 from flask_restful import Resource
 from flask import request
 
@@ -21,8 +20,9 @@ class Categories(Resource):
 
 
 class CategoryDetail(Resource):
-    def get(self):
-        category = Category.query.options(joinedload('user').filter_by(diw))
+    def get(self, category_id):
+        category = Category.query.options().filter_by(id=category_id).first()
+        return category.json()
 
     def put(self, category_id):
         data = request.get_json()
